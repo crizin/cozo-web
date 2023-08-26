@@ -2,6 +2,7 @@
 
 import { faPaperclip } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 import { useEffect, useState } from 'react';
 import styles from './favicon.module.scss';
@@ -26,7 +27,17 @@ export default function Favicon({ className, size, linkUrl }: Props) {
   return loadingFailed ? (
     <FontAwesomeIcon icon={faPaperclip} className={`${styles.favicon} ${className}`} width={size} height={size} />
   ) : (
-    imgSrc && <img src={imgSrc} className={`${styles.favicon} ${className}`} alt="" width={size} height={size} onError={() => setLoadingFailed(true)} />
+    imgSrc && (
+      <Image
+        src={imgSrc}
+        className={`${styles.favicon} ${className}`}
+        alt=""
+        width={size}
+        height={size}
+        unoptimized={true}
+        onError={() => setLoadingFailed(true)}
+      />
+    )
   );
 }
 

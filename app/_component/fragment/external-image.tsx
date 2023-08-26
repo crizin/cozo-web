@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 interface Props {
@@ -17,5 +18,9 @@ export default function ExternalImage({ className, width, height, src }: Props) 
     setImgSrc(src);
   }, [src]);
 
-  return !loadingFailed && <img src={imgSrc} alt="" width={width} height={height} className={className} onError={() => setLoadingFailed(true)} />;
+  return (
+    !loadingFailed && (
+      <Image src={imgSrc} alt="" width={width} height={height} className={className} unoptimized={true} onError={() => setLoadingFailed(true)} />
+    )
+  );
 }
