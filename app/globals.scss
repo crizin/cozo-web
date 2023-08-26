@@ -1,0 +1,147 @@
+@use '@/app/variables.scss' as var;
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  color: var.$text-color;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+  word-break: keep-all;
+  background-color: var.$background-color;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h1, h2, h3, strong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a[rel="nofollow"]:visited {
+  color: #aaa;
+}
+
+textarea {
+  color: #333;
+  background-color: #fafafa;
+  resize: vertical;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.clear {
+  display: block;
+  clear: both;
+}
+
+.no-title {
+  color: #666;
+  font-style: italic;
+}
+
+.button {
+  color: var.$navbar-text-color;
+  background-color: var.$navbar-background-color;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0 50px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paging {
+  display: flex;
+  margin-top: 10px;
+  gap: 3px;
+
+  a {
+    display: block;
+    flex-grow: 1;
+    background-color: var.$navbar-background-color;
+    color: var.$navbar-text-color;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+.thumbnail {
+  float: left;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+}
+
+.blink::after {
+  content: ' ✨';
+  animation: blink-animation 400ms ease-in-out infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var.$text-color-dark;
+    background-color: var.$background-color-dark;
+  }
+
+  textarea {
+    color: #fff;
+    background-color: #513232;
+  }
+
+  a[rel="nofollow"]:visited {
+    color: #666;
+  }
+
+  .thumbnail {
+    border: 1px solid #333;
+  }
+
+  .button {
+    color: var.$navbar-text-color-dark;
+    background-color: var.$navbar-background-color-dark;
+  }
+
+  .paging a {
+    background-color: var.$navbar-background-color-dark;
+    color: var.$navbar-text-color-dark;
+  }
+}

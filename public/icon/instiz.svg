@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<style>.st1{fill:#fff}</style>
+	<g>
+		<circle cx="256" cy="256" r="252.75" style="fill:#14bd6b"/>
+		<circle cx="188.5" cy="186.5" r="32.5" class="st1"/>
+		<path d="M312 129h46v106h-46zm40 173c0 48.6-44.98 88-98 88s-98-39.4-98-88h-44.15c5.08 74.86 66.78 134 142.15 134s137.07-59.14 142.15-134H352z" class="st1"/>
+	</g>
+</svg>

@@ -1,0 +1,21 @@
+@use '@/app/variables.scss' as var;
+
+.keywords {
+  .keyword {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var.$text-point-color;
+    margin: 20px 0 5px;
+  }
+
+  .article {
+    padding: 2px 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .keywords .keyword {
+    color: var.$text-point-color-dark;
+  }
+}

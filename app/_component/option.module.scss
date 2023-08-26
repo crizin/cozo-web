@@ -1,0 +1,26 @@
+@use '@/app/variables.scss' as var;
+
+.option {
+  display: none;
+
+  .icon {
+    display: inline-block;
+    margin-right: 3px;
+  }
+
+  &.checked {
+    color: #aaa;
+  }
+}
+
+@media (width >= 1170px) {
+  .option {
+    display: block;
+    position: absolute;
+    width: 170px;
+    top: 15px;
+    left: 50%;
+    margin-left: 415px;
+    color: #777;
+  }
+}

@@ -1,0 +1,29 @@
+@use '@/app/variables.scss' as var;
+
+.article {
+  clear: left;
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+
+  .logo {
+    margin-right: 6px;
+  }
+
+  .title {
+    flex-grow: 1;
+    padding-right: 10px;
+  }
+
+  .elapsed {
+    color: #999;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .no-title {
+    color: #999;
+    font-style: italic;
+  }
+}

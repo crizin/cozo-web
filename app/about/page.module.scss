@@ -1,0 +1,30 @@
+@use '@/app/variables.scss' as var;
+
+.about {
+  > div {
+    margin-bottom: 30px;
+
+    h3 {
+      color: var.$text-point-color;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 5px 0;
+      word-break: keep-all;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .about {
+    h3 {
+      color: var.$text-point-color-dark
+    }
+  }
+}

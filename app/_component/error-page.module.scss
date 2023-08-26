@@ -1,0 +1,36 @@
+@use '@/app/variables.scss' as var;
+
+.error {
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  span {
+    display: block;
+  }
+
+  .icon {
+    color: var.$text-point-color;
+    margin: 50px 0 30px;
+  }
+
+  p {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+
+  button {
+    margin: 0 10px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .error {
+    .icon {
+      color: var.$text-point-color-dark;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cozo-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/node": "20.5.3",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.47.0",
+    "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.1",
+    "moment": "^2.29.4",
+    "next": "13.4.19",
+    "next-recaptcha-v3": "^1.2.0",
+    "next-safe": "^3.4.1",
+    "normalize.css": "^8.0.1",
+    "prom-client": "^14.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.4",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.1",
+    "sass": "^1.65.1"
+  }
+}

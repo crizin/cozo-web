@@ -1,0 +1,15 @@
+@use '@/app/variables.scss' as var;
+
+.footer {
+  margin: 0 20px;
+  font-size: 0.9rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    vertical-align: -2px;
+    margin-right: 3px;
+  }
+}

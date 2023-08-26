@@ -1,0 +1,24 @@
+@use '@/app/variables.scss' as var;
+
+.title {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+.search-all {
+  display: block;
+  float: right;
+  margin-top: 15px;
+}
+
+.board-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 10px 0 20px;
+
+  .logo {
+    margin-right: 0.5rem;
+    vertical-align: -5px;
+    border-radius: 5px;
+  }
+}

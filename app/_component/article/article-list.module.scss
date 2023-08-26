@@ -1,0 +1,13 @@
+@use '@/app/variables.scss' as var;
+
+.board-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 10px 0 20px;
+
+  .logo {
+    margin-right: 0.5rem;
+    vertical-align: -5px;
+    border-radius: 5px;
+  }
+}

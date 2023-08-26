@@ -1,0 +1,25 @@
+@use '@/app/variables.scss' as var;
+
+.link {
+  display: block;
+  margin-bottom: 10px;
+
+  span {
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  .title {
+    margin-bottom: 5px;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,20 @@
+@use '@/app/variables.scss' as var;
+
+.form {
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var.$navbar-background-color;
+    border-radius: 10px;
+    color: var.$text-color;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .form textarea {
+    border: 1px solid var.$navbar-background-color-dark;
+    color: var.$text-color-dark;
+  }
+}

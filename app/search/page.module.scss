@@ -1,0 +1,28 @@
+@use '@/app/variables.scss' as var;
+
+.title {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+
+.summary {
+  li {
+    line-height: 1.8;
+
+    img {
+      margin-right: 8px;
+      vertical-align: -2px;
+    }
+  }
+}
+
+.splitter {
+  border: 0;
+  border-top: 2px solid var.$navbar-active-color
+}
+
+@media (prefers-color-scheme: dark) {
+  .splitter {
+    border-color: var.$navbar-active-color-dark;
+  }
+}
