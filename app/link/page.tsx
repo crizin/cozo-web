@@ -17,7 +17,7 @@ export default async function LinkPage({ searchParams }: { searchParams: { [key:
   return (
     <>
       <LinkList links={links.result} />
-      <nav className={`paging ${styles.paging}`}>
+      <nav className={`${styles.paging} paging`}>
         {links.result.prevCursor !== null && (
           <Link href={`/link?page=${links.result.prevCursor}`} rel="prev">
             <FontAwesomeIcon icon={faChevronLeft} />

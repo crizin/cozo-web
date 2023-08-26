@@ -16,6 +16,17 @@
   }
 }
 
+.paging {
+  a[rel="prev"] {
+    flex-basis: 100px;
+    flex-shrink: 1;
+  }
+
+  a[rel="next"] {
+    flex-grow: 100;
+  }
+}
+
 .splitter {
   border: 0;
   border-top: 2px solid var.$navbar-active-color

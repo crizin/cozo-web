@@ -45,7 +45,7 @@ export default async function SearchPage({ searchParams }: { searchParams: { [ke
       )}
       <hr className={styles.splitter} />
       <SearchArticleList articles={result.articles} titles={result.titles} contents={result.contents} logoSize={18} />
-      <nav className="paging">
+      <nav className={`${styles.paging} paging`}>
         {response.result.prevCursor !== null && (
           <Link href={`/search?keyword=${encodeURIComponent(result.keyword)}&page=${response.result.prevCursor}`} rel="prev">
             <FontAwesomeIcon icon={faChevronLeft} />

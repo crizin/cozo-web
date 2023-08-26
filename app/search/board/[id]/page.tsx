@@ -53,7 +53,7 @@ export default async function SearchBoardPage({
         <span className="site">{board.site.name}</span> &raquo; <span>{board.name}</span>
       </h1>
       <SearchArticleList articles={result.articles} titles={result.titles} contents={result.contents} />
-      <nav className="paging">
+      <nav className={`${styles.paging} paging`}>
         {response.result.prevCursor !== null && (
           <Link href={`/search/board/${board.id}?keyword=${encodeURIComponent(result.keyword)}&page=${response.result.prevCursor}`} rel="prev">
             <FontAwesomeIcon icon={faChevronLeft} />
