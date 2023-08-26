@@ -74,7 +74,7 @@ export default function Header({ boards }: { boards: Board[] }) {
               링크
             </Link>
           </li>
-          <li className={pathname === '/keyword' ? styles.active : ''}>
+          <li className={pathname.startsWith('/keyword') ? styles.active : ''}>
             <Link href="/keyword" onClick={() => setExpandedLayer(undefined)}>
               키워드
             </Link>
