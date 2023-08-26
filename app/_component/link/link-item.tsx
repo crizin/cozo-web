@@ -10,7 +10,7 @@ export default function LinkItem({ link }: { link: Link }) {
       <a href={link.url} rel="nofollow" className={styles.link}>
         <span className={`${styles.title} ellipsis`}>
           <Favicon linkUrl={link.url} size={18} />
-          {link.title ?? Utils.decorateUrl(link.url)}
+          {link.title ? link.title : Utils.decorateUrl(link.url)}
         </span>
         {link.thumbnailUrl && <ExternalImage className="thumbnail" width={103} height={58} src={link.thumbnailUrl} />}
         <span className={styles.description}>{link.description}</span>
