@@ -45,6 +45,10 @@ export default function Message() {
 
       <form onSubmit={form.handleSubmit(onSubmit)} className={styles.form}>
         <textarea rows={5} placeholder="내용을 입력해주세요" {...form.register('message', { required: true })}></textarea>
+        <div className={styles['recaptcha-branding']}>
+          이 사이트는 reCAPTCHA로 보호되며 Google <a href="https://policies.google.com/privacy">개인정보처리방침</a> 및{' '}
+          <a href="https://policies.google.com/terms">서비스 약관</a>이 적용됩니다.
+        </div>
         <button type="submit" className="button" disabled={sending}>
           {sending ? (
             <span>
