@@ -26,7 +26,7 @@ a {
   color: inherit;
 }
 
-a[rel="nofollow"]:visited {
+a[rel='nofollow']:visited {
   color: #aaa;
 }
 
@@ -114,6 +114,10 @@ textarea:focus, input:focus {
   }
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var.$text-color-dark;
@@ -125,7 +129,7 @@ textarea:focus, input:focus {
     background-color: #513232;
   }
 
-  a[rel="nofollow"]:visited {
+  a[rel='nofollow']:visited {
     color: #666;
   }
 
