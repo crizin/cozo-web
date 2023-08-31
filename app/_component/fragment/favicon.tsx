@@ -35,9 +35,7 @@ export default function Favicon({ className, size, linkUrl }: Props) {
 
 function extractHost(url: string) {
   try {
-    const parsedUrl = new URL(url);
-    const host = parsedUrl.origin;
-    return host.startsWith('http://') ? host.replace('http://', 'https://') : host;
+    return new URL(url).origin;
   } catch (e) {
     return null;
   }
