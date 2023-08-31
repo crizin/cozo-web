@@ -19,8 +19,6 @@ export default function ExternalImage({ className, width, height, src }: Props) 
   }, [src]);
 
   return (
-    !loadingFailed && (
-      <Image src={imgSrc} alt="" width={width} height={height} className={className} unoptimized={true} onError={() => setLoadingFailed(true)} />
-    )
+    !loadingFailed && <Image src={imgSrc} alt="" width={width} height={height} quality={90} className={className} onError={() => setLoadingFailed(true)} />
   );
 }

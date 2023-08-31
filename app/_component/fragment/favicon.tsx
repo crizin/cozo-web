@@ -28,15 +28,7 @@ export default function Favicon({ className, size, linkUrl }: Props) {
     <FontAwesomeIcon icon={faPaperclip} className={`${styles.favicon} ${className}`} width={size} height={size} />
   ) : (
     imgSrc && (
-      <Image
-        src={imgSrc}
-        className={`${styles.favicon} ${className}`}
-        alt=""
-        width={size}
-        height={size}
-        unoptimized={true}
-        onError={() => setLoadingFailed(true)}
-      />
+      <Image src={imgSrc} className={`${styles.favicon} ${className}`} alt="" width={size} height={size} quality={100} onError={() => setLoadingFailed(true)} />
     )
   );
 }
