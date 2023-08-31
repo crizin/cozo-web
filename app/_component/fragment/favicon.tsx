@@ -18,10 +18,9 @@ export default function Favicon({ className, size, linkUrl }: Props) {
   const [loadingFailed, setLoadingFailed] = useState(false);
 
   useEffect(() => {
-    const host = extractHost(linkUrl);
-    if (host) {
-      setImgSrc(`${host}/favicon.ico`);
-    }
+    try {
+      setImgSrc(`${new URL(linkUrl).origin}/favicon.ico`);
+    } catch (e) {}
   }, [linkUrl]);
 
   return loadingFailed ? (
@@ -31,12 +30,4 @@ export default function Favicon({ className, size, linkUrl }: Props) {
       <Image src={imgSrc} className={`${styles.favicon} ${className}`} alt="" width={size} height={size} quality={100} onError={() => setLoadingFailed(true)} />
     )
   );
-}
-
-function extractHost(url: string) {
-  try {
-    return new URL(url).origin;
-  } catch (e) {
-    return null;
-  }
 }
