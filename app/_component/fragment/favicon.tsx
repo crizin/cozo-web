@@ -19,7 +19,10 @@ export default function Favicon({ className, size, linkUrl }: Props) {
 
   useEffect(() => {
     try {
-      setImgSrc(`${new URL(linkUrl).origin}/favicon.ico`);
+      const faviconUrl = getFaviconUrl(linkUrl);
+      if (faviconUrl) {
+        setImgSrc(faviconUrl);
+      }
     } catch (e) {}
   }, [linkUrl]);
 
@@ -30,4 +33,31 @@ export default function Favicon({ className, size, linkUrl }: Props) {
       <Image src={imgSrc} className={`${styles.favicon} ${className}`} alt="" width={size} height={size} quality={100} onError={() => setLoadingFailed(true)} />
     )
   );
+}
+
+const faviconMap: { [key: string]: string } = {
+  'clien.net': 'https://www.clien.net/service/image/favicon.ico',
+  'edaily.co.kr': 'https://www.edaily.co.kr/v2/images/favicon.ico',
+  'mnews.jtbc.co.kr': 'https://nstatic.jtbc.co.kr/favicon_2023/news/favicon-32x32.png',
+  'newspim.com': 'https://img.newspim.com/m/mweb/favicon_72X72V2.png',
+  'theqoo.net': 'https://theqoo.net/files/attach/xeicon/favicon.ico',
+  'v.daum.net': 'https://t1.daumcdn.net/top/favicon.ico',
+};
+
+function getFaviconUrl(linkUrl: string) {
+  let url;
+
+  try {
+    url = new URL(linkUrl);
+  } catch (e) {
+    return null;
+  }
+
+  const hostname = url.hostname.replace(/^(www|m)\./, '');
+
+  if (hostname in faviconMap) {
+    return faviconMap[hostname];
+  } else {
+    return `${url.origin}/favicon.ico`;
+  }
 }
