@@ -40,6 +40,7 @@ const faviconMap: { [key: string]: string } = {
   'clien.net': 'https://www.clien.net/service/image/favicon.ico',
   'edaily.co.kr': 'https://www.edaily.co.kr/v2/images/favicon.ico',
   'fnnews.com': 'https://www.fnnews.com/resources/images/icon2020/favicon-96x96.png',
+  'imnews.imbc.com': 'https://image.imnews.imbc.com/page/include/images/favicon.ico',
   'mnews.jtbc.co.kr': 'https://nstatic.jtbc.co.kr/favicon_2023/news/favicon-32x32.png',
   'news.nate.com': 'https://m.news.nate.com/icon/favicon.ico',
   'newspim.com': 'https://img.newspim.com/m/mweb/favicon_72X72V2.png',
