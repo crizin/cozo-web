@@ -10,7 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Slack Notification
         uses: act10ns/slack@v2
@@ -20,36 +25,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get Short Hash
-        id: short-sha
-        uses: benjlevesque/short-sha@v2.2
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
         with:
-          aws-region: ${{ secrets.AWS_REGION }}
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
         with:
-          mask-password: true
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build main webapp
         uses: docker/build-push-action@v3
         if: github.ref == 'refs/heads/main'
         with:
           push: true
-          tags: ${{ steps.login-ecr.outputs.registry }}/${{ github.event.repository.name }}:${{ steps.short-sha.outputs.sha }},${{ steps.login-ecr.outputs.registry }}/${{ github.event.repository.name }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 
       - name: Build canary webapp
         uses: docker/build-push-action@v3
         if: startsWith(github.ref, 'refs/heads/f/')
         with:
           push: true
-          tags: ${{ steps.login-ecr.outputs.registry }}/${{ github.event.repository.name }}-canary:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:canary
+          labels: ${{ steps.meta.outputs.labels }}
 
       - name: Slack Notification
         uses: act10ns/slack@v2
