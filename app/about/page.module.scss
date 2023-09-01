@@ -18,10 +18,6 @@
     a {
       text-decoration: underline;
     }
-
-    .favicon {
-      filter: invert(1);
-    }
   }
 }
 
@@ -29,6 +25,10 @@
   .about {
     h3 {
       color: var.$text-point-color-dark
+    }
+
+    .favicon {
+      filter: invert(1);
     }
   }
 }
