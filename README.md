@@ -26,6 +26,12 @@ yarn dev
 - `GA_TRACKING_ID`: Google Analytics Tracking ID
 - `RECAPTCHA_SITE_KEY`: Google reCAPTCHA site key
 
+## GitHub Action
+
+- `.github/workflows/build.yml`: 프로젝트 빌드 후 GitHub Container Registry에 Docker 이미지를 푸시
+    - 필요한 Secrets
+        - `SLACK_WEBHOOK_URL`: https://hooks.slack.com/services/ABCDEFGHI/JKLMNOPQRST/abcdefghijklmnOPQRSTU012
+
 ## 참고
 
 - [cozo-api / 백엔드 서버](https://github.com/crizin/cozo-api)
