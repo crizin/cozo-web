@@ -36,9 +36,12 @@ export default function Favicon({ className, size, linkUrl }: Props) {
 }
 
 const faviconMap: { [key: string]: string } = {
+  'biz.chosun.com': 'https://biz.chosun.com/pf/resources/icons/favicon_chosun.png?d=242',
   'clien.net': 'https://www.clien.net/service/image/favicon.ico',
   'edaily.co.kr': 'https://www.edaily.co.kr/v2/images/favicon.ico',
+  'fnnews.com': 'https://www.fnnews.com/resources/images/icon2020/favicon-96x96.png',
   'mnews.jtbc.co.kr': 'https://nstatic.jtbc.co.kr/favicon_2023/news/favicon-32x32.png',
+  'news.nate.com': 'https://m.news.nate.com/icon/favicon.ico',
   'newspim.com': 'https://img.newspim.com/m/mweb/favicon_72X72V2.png',
   'theqoo.net': 'https://theqoo.net/files/attach/xeicon/favicon.ico',
   'v.daum.net': 'https://t1.daumcdn.net/top/favicon.ico',
