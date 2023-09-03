@@ -20,7 +20,7 @@ export default function ArticleLink({ article, mobile, target, logoSize, classNa
       target={target}
       className={`${styles.article} ${className}`}
       onClick={() => {
-        fetch(`/api/logging?id=${article.id}`, { method: 'POST' }).catch();
+        fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/logging/${article.id}`, { method: 'POST' }).catch();
       }}
     >
       {logoSize && <SiteLogo board={article.board} size={logoSize} className={styles.logo} />}

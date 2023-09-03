@@ -45,18 +45,6 @@ export async function getSearchResultsByBoard(boardId: number, keyword: string, 
   );
 }
 
-export async function sendMessage(token: string, message: string) {
-  return fetch(`${process.env.API_ENDPOINT}/send-message`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `token=${encodeURIComponent(token)}&message=${encodeURIComponent(message)}`,
-  });
-}
-
-export async function clickArticle(articleId: number) {
-  fetch(`${process.env.API_ENDPOINT}/logging/${articleId}`, { method: 'POST' }).catch();
-}
-
 function validateResponse(response: globalThis.Response) {
   if (response.status === 400) {
     throw new BadRequestError();

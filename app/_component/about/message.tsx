@@ -16,7 +16,12 @@ export default function Message() {
     setSending(true);
 
     const token = await executeRecaptcha('message');
-    fetch('/api/message', { method: 'POST', body: JSON.stringify({ token, message: data.message }) })
+
+    fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/send-message`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `token=${encodeURIComponent(token)}&message=${encodeURIComponent(data.message)}`,
+    })
       .then(async (response) => {
         setSending(false);
         const json = await response.json();
