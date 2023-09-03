@@ -19,8 +19,8 @@ export default async function AboutPage() {
         <h3>개발</h3>
         <p>이 사이트의 소스코드는 GitHub에 공개되어 있습니다. 기술적인 내용이 궁금하다면 방문해보세요.</p>
         <p>
-          <Favicon linkUrl="https://github.com" size={16} className={styles.favicon} />
-          <a href="https://github.com/crizin/cozo-api">Backend API</a> / <Favicon linkUrl="https://github.com" size={16} className={styles.favicon} />
+          <Favicon faviconUrl="https://github.githubassets.com/favicons/favicon.svg" size={16} className={styles.favicon} />
+          <a href="https://github.com/crizin/cozo-api">Backend API</a> / <Favicon faviconUrl="https://github.githubassets.com/favicons/favicon.svg" size={16} className={styles.favicon} />
           <a href="https://github.com/crizin/cozo-web">Web Client</a>
         </p>
       </div>

@@ -45,6 +45,7 @@ export interface Link {
   url: string;
   title: string;
   description: string;
+  faviconUrl: string;
   thumbnailUrl: string;
   articles?: Article[];
 }
