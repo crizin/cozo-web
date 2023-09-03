@@ -1695,11 +1695,6 @@ next-recaptcha-v3@^1.2.0:
   resolved "https://registry.yarnpkg.com/next-recaptcha-v3/-/next-recaptcha-v3-1.2.0.tgz#57943be3d77a5195eb487d77e789d2339a28d88c"
   integrity sha512-OghIhWetYHlCWLjp4dVq4G3Mx0bQ6hS9fCQi5KgkK4Hk788yP6mVoY8gy4dq7vKxkDoifkXIzS+jr29/RMsx9g==
 
-next-safe@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/next-safe/-/next-safe-3.4.1.tgz#bd13cc8b3878b8bb61cb781a03c77907f369545c"
-  integrity sha512-GOam3DYMHUIKwxHeqVg9pkuYFhvtUeivHexdbL3lg0mjibsnIB3NOD81dKDgaeX+cReWbugdCtWYllzXmmpE+Q==
-
 next@13.4.19:
   version "13.4.19"
   resolved "https://registry.yarnpkg.com/next/-/next-13.4.19.tgz#2326e02aeedee2c693d4f37b90e4f0ed6882b35f"

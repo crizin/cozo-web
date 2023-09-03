@@ -21,7 +21,6 @@
     "moment": "^2.29.4",
     "next": "13.4.19",
     "next-recaptcha-v3": "^1.2.0",
-    "next-safe": "^3.4.1",
     "normalize.css": "^8.0.1",
     "prom-client": "^14.2.0",
     "react": "18.2.0",
