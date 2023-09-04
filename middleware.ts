@@ -24,8 +24,6 @@ export function middleware() {
 }
 
 function getSecurityHeaders() {
-  const requestHeaders = new Headers();
-
   const nonce = crypto.randomUUID();
   const csp = `
     default-src 'none';
@@ -36,15 +34,16 @@ function getSecurityHeaders() {
     frame-ancestors 'none';
     frame-src www.google.com;
     img-src 'self' data: *;
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' www.google.com www.googletagmanager.com www.gstatic.com;
+    script-src 'self' 'unsafe-eval' 'nonce-${nonce}' www.google.com www.googletagmanager.com www.gstatic.com;
     style-src 'self' 'unsafe-inline';
   `;
 
-  requestHeaders.set('Content-Security-Policy', csp.replace(/\s{2,}/g, ' ').trim());
-  requestHeaders.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  requestHeaders.set('X-Content-Type-Options', 'nosniff');
-  requestHeaders.set('X-Frame-Options', 'DENY');
-  requestHeaders.set('X-Nonce', nonce);
-  requestHeaders.set('X-Xss-Protection', '1; mode=block');
-  return requestHeaders;
+  const headers = new Headers();
+  headers.set('Content-Security-Policy', csp.replace(/\s{2,}/g, ' ').trim());
+  headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  headers.set('X-Content-Type-Options', 'nosniff');
+  headers.set('X-Frame-Options', 'DENY');
+  headers.set('X-Nonce', nonce);
+  headers.set('X-Xss-Protection', '1; mode=block');
+  return headers;
 }

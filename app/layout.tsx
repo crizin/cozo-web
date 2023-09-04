@@ -7,7 +7,7 @@ import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import Script from 'next/script';
 import 'normalize.css';
 import { ReactNode } from 'react';
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const boards = await getBoards();
   const cookieStore = cookies();
+  const nonce = headers().get('X-Nonce') as string;
 
   return (
     <html lang="ko">
@@ -51,7 +52,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         {process.env.GA_TRACKING_ID && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`} />
-            <Script id="google-analytics">
+            <Script id="google-analytics" nonce={nonce}>
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag() { dataLayer.push(arguments); }
