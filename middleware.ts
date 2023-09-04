@@ -30,7 +30,7 @@ function getSecurityHeaders() {
   const csp = `
     default-src 'none';
     base-uri 'self';
-    connect-src 'self' analytics.google.com;
+    connect-src 'self' analytics.google.com ${process.env.NEXT_PUBLIC_API_ENDPOINT};
     font-src 'self' fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'none';
