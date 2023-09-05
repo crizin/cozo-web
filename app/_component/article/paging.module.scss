@@ -1,12 +1,12 @@
 @use '@/app/variables.scss' as var;
 
 .paging {
-  a[rel="prev"] {
+  a[rel='prev'] {
     flex-basis: 100px;
     flex-shrink: 1;
   }
 
-  a[rel="next"] {
+  a[rel='next'] {
     flex-grow: 100;
   }
 }
