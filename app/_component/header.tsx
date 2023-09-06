@@ -6,14 +6,15 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './header.module.scss';
 
 export default function Header({ boards }: { boards: Board[] }) {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const form = useForm();
   const [expandedLayer, setExpandedLayer] = useState<string>();
 
@@ -26,6 +27,14 @@ export default function Header({ boards }: { boards: Board[] }) {
     }
   };
 
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    setExpandedLayer(undefined);
+
+    if (new URL(event.currentTarget.href).pathname === pathname && searchParams.size === 0) {
+      router.refresh();
+    }
+  };
+
   return (
     <>
       <AnimatePresence>
@@ -33,7 +42,7 @@ export default function Header({ boards }: { boards: Board[] }) {
           <motion.ul className={styles['board-panel']} initial={{ y: -400 }} animate={{ y: 0 }} transition={{ type: 'spring', duration: 0.2 }}>
             {boards.map((board) => (
               <li key={board.id}>
-                <Link href={`/board/${board.id}`} onClick={() => setExpandedLayer(undefined)}>
+                <Link href={`/board/${board.id}`} onClick={handleClick}>
                   <span>
                     <SiteLogo board={board} size={16} />
                     <strong>{board.site.name}</strong>
@@ -65,17 +74,17 @@ export default function Header({ boards }: { boards: Board[] }) {
       <nav className={styles.navigation}>
         <ul>
           <li className={pathname === '/' ? styles.active : ''}>
-            <Link href="/" onClick={() => setExpandedLayer(undefined)}>
+            <Link href="/" onClick={handleClick}>
               모든 글
             </Link>
           </li>
           <li className={pathname === '/link' ? styles.active : ''}>
-            <Link href="/link" onClick={() => setExpandedLayer(undefined)}>
+            <Link href="/link" onClick={handleClick}>
               링크
             </Link>
           </li>
           <li className={pathname.startsWith('/keyword') ? styles.active : ''}>
-            <Link href="/keyword" onClick={() => setExpandedLayer(undefined)}>
+            <Link href="/keyword" onClick={handleClick}>
               키워드
             </Link>
           </li>
