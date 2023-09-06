@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export const config = {
   matcher: [
@@ -12,8 +12,8 @@ export const config = {
   ],
 };
 
-export function middleware() {
-  const securityHeaders = getSecurityHeaders();
+export function middleware(request: NextRequest) {
+  const securityHeaders = getSecurityHeaders(request.headers);
 
   return NextResponse.next({
     headers: securityHeaders,
@@ -23,7 +23,7 @@ export function middleware() {
   });
 }
 
-function getSecurityHeaders() {
+function getSecurityHeaders(headers: Headers) {
   const nonce = crypto.randomUUID();
   const csp = `
     default-src 'none';
@@ -38,7 +38,6 @@ function getSecurityHeaders() {
     style-src 'self' 'unsafe-inline';
   `;
 
-  const headers = new Headers();
   headers.set('Content-Security-Policy', csp.replace(/\s{2,}/g, ' ').trim());
   headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   headers.set('X-Content-Type-Options', 'nosniff');
