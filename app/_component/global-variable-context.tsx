@@ -35,8 +35,8 @@ export const GlobalVariableContext = createContext<{
   dispatch: Dispatch<string>;
 }>({ state: initialState, dispatch: () => null });
 
-export default function GlobalVariableContextProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export default function GlobalVariableContextProvider({ useNewWindow, children }: { useNewWindow: boolean; children: React.ReactNode }) {
+  const [state, dispatch] = useReducer(reducer, { ...initialState, useNewWindow });
   const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
 
   useEffect(() => {

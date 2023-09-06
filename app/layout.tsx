@@ -44,6 +44,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const boards = await getBoards();
   const cookieStore = cookies();
   const nonce = headers().get('X-Nonce') as string;
+  const useNewWindow = cookieStore.get('open_new_window')?.value === '1';
 
   return (
     <html lang="ko">
@@ -64,7 +65,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         )}
       </head>
       <body className={googleFont.className}>
-        <GlobalVariableContextProvider>
+        <GlobalVariableContextProvider useNewWindow={useNewWindow}>
           <div className={styles.container}>
             <div className={styles.header}>
               <Header boards={boards.result} />
@@ -74,7 +75,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
               <Footer />
             </div>
           </div>
-          <Option newWindow={cookieStore.get('open_new_window')?.value === '1'} />
+          <Option newWindow={useNewWindow} />
         </GlobalVariableContextProvider>
       </body>
     </html>
