@@ -21,10 +21,13 @@ export default function ArticleList({ board, articles }: Props) {
       {board && (
         <h1 className={styles['board-title']}>
           <SiteLogo board={board} size={24} className={styles.logo} />
-          <a className="site" href={state.useMobileUrl ? board.site.mainUrlMobile : board.site.mainUrlPc}>
+          <a className="site" href={state.useMobileUrl ? board.site.mainUrlMobile : board.site.mainUrlPc} target={state.useNewWindow ? '_blank' : '_self'}>
             {board.site.name}
           </a>{' '}
-          &raquo; <a href={state.useMobileUrl ? board.mainUrlMobile : board.mainUrlPc}>{board.name}</a>
+          &raquo;{' '}
+          <a href={state.useMobileUrl ? board.mainUrlMobile : board.mainUrlPc} target={state.useNewWindow ? '_blank' : '_self'}>
+            {board.name}
+          </a>
         </h1>
       )}
       <ul>
