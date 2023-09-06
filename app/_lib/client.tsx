@@ -4,6 +4,16 @@ export async function getBoards(): Promise<Response<Board[]>> {
   return fetch(`${process.env.API_ENDPOINT}/boards`, { next: { revalidate: 3600 } }).then((response) => validateResponse(response));
 }
 
+export async function getBoard(id: number) {
+  return getBoards().then((response) => {
+    const board = response.result.filter((board) => board.id === id).pop();
+    if (board) {
+      return board;
+    }
+    throw new BadRequestError();
+  });
+}
+
 export async function getBoardMap(): Promise<Record<string, Board>> {
   const map: Record<string, Board> = {};
   const boards = await getBoards();

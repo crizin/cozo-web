@@ -1,6 +1,6 @@
 import SiteLogo from '@/app/_component/fragment/site-logo';
 import SearchArticleList from '@/app/_component/search/article-list';
-import { BadRequestError, getBoardMap, getSearchResultsByBoard } from '@/app/_lib/client';
+import { getBoard, getSearchResultsByBoard } from '@/app/_lib/client';
 import Utils from '@/app/_lib/utils';
 import { faChevronLeft, faChevronRight, faReply, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,13 +9,7 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const boards = await getBoardMap();
-  const board = boards[parseInt(params.id)];
-
-  if (!board) {
-    throw new BadRequestError();
-  }
-
+  const board = await getBoard(parseInt(params.id));
   return {
     title: `cozo | 검색 | ${board.name} » ${board.site.name}`,
   };
@@ -28,8 +22,7 @@ export default async function SearchBoardPage({
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const boards = await getBoardMap();
-  const board = boards[params.id];
+  const board = await getBoard(parseInt(params.id));
   const response = await getSearchResultsByBoard(board.id, searchParams.keyword as string, Utils.parseNumber(searchParams.page, 1));
   const result = response.result.item;
 

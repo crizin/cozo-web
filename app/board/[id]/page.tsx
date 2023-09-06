@@ -1,13 +1,11 @@
 import ArticleList from '@/app/_component/article/article-list';
 import Paging from '@/app/_component/article/paging';
-import { getBoardArticles, getBoardMap, getBoards } from '@/app/_lib/client';
+import { getBoard, getBoardArticles, getBoards } from '@/app/_lib/client';
 import Utils from '@/app/_lib/utils';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const boards = await getBoardMap();
-  const board = boards[parseInt(params.id)];
-
+  const board = await getBoard(parseInt(params.id));
   return {
     title: `cozo | ${board.name} » ${board.site.name}`,
   };
