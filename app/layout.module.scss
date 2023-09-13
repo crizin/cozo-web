@@ -1,5 +1,9 @@
 @use '@/app/variables.scss' as var;
 
+.font {
+  font-family: var(--font-noto-sans-kr), var(--font-noto-color-emoji), sans-serif;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr minmax(320px, 800px) 1fr;

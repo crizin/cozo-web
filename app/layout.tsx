@@ -6,7 +6,7 @@ import { getBoards } from '@/app/_lib/client';
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Metadata } from 'next';
-import { Noto_Sans_KR } from 'next/font/google';
+import { Noto_Color_Emoji, Noto_Sans_KR } from 'next/font/google';
 import { cookies, headers } from 'next/headers';
 import Script from 'next/script';
 import 'normalize.css';
@@ -14,7 +14,9 @@ import { ReactNode } from 'react';
 import './globals.scss';
 import styles from './layout.module.scss';
 
-const googleFont = Noto_Sans_KR({ subsets: ['latin'], weight: ['400', '700'] });
+const fontEmoji = Noto_Color_Emoji({ subsets: ['emoji'], weight: ['400'], variable: '--font-noto-color-emoji' });
+const fontText = Noto_Sans_KR({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-noto-sans-kr' });
+
 faConfig.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -64,7 +66,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           </>
         )}
       </head>
-      <body className={googleFont.className}>
+      <body className={`${styles.font} ${fontText.variable} ${fontEmoji.variable}`}>
         <GlobalVariableContextProvider useNewWindow={useNewWindow}>
           <div className={styles.container}>
             <div className={styles.header}>
