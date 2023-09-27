@@ -14,20 +14,26 @@ export const metadata: Metadata = {
 
 export default async function SearchPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
   const boards = await getBoardMap();
-  const response = await getSearchResults(searchParams.keyword as string, Utils.parseNumber(searchParams.page, 1));
+  const response = await getSearchResults((searchParams.keyword as string) || '', Utils.parseNumber(searchParams.page, 1));
   const result = response.result.item;
 
   return (
     <>
       <h4 className={styles.title}>
-        <Link href={`/search?keyword=${result.keyword}`}>
-          <FontAwesomeIcon icon={faSearch} /> &quot;{result.keyword}&quot;에 대한{' '}
-          {result.totalHits === 0 ? (
-            <span>검색 결과가 없습니다</span>
-          ) : (
-            <span>{result.totalHits >= 10000 ? '10,000+' : Utils.formatDecimal(result.totalHits) + '개의 검색 결과'}</span>
-          )}
-        </Link>
+        {result.keyword === '' ? (
+          <>
+            <FontAwesomeIcon icon={faSearch} /> 검색어를 입력해주세요
+          </>
+        ) : (
+          <Link href={`/search?keyword=${result.keyword}`}>
+            <FontAwesomeIcon icon={faSearch} /> &quot;{result.keyword}&quot;에 대한{' '}
+            {result.totalHits === 0 ? (
+              <span>검색 결과가 없습니다</span>
+            ) : (
+              <span>{result.totalHits >= 10000 ? '10,000+' : Utils.formatDecimal(result.totalHits) + '개의 검색 결과'}</span>
+            )}
+          </Link>
+        )}
       </h4>
       {result.totalHits > 0 && (
         <ul className={styles.summary}>
