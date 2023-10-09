@@ -24,8 +24,8 @@ yarn dev
 - `HOSTNAME`: 0.0.0.0 (Public 접근이 필요하다면 설정)
 - `NEXT_PUBLIC_API_ENDPOINT`: API 서버 URL (클라이언트 호출용)
 - `API_ENDPOINT`: API 서버 URL (내부 호출용)
-- `GA_TRACKING_ID`: Google Analytics Tracking ID
-- `RECAPTCHA_SITE_KEY`: Google reCAPTCHA site key
+- `GA_TRACKING_ID`: [Google Analytics](https://marketingplatform.google.com/about/analytics/) Tracking ID
+- `TURNSTILE_SITE_KEY`: [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) site key
 
 ## GitHub Action
 

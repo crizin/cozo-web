@@ -32,9 +32,9 @@ function getSecurityHeaders(headers: Headers) {
     font-src 'self' fonts.gstatic.com;
     form-action 'none';
     frame-ancestors 'none';
-    frame-src www.google.com;
+    frame-src challenges.cloudflare.com;
     img-src 'self' data: *;
-    script-src 'self' 'unsafe-eval' 'nonce-${nonce}' www.google.com www.googletagmanager.com www.gstatic.com;
+    script-src 'self' 'unsafe-eval' 'nonce-${nonce}' www.google.com www.googletagmanager.com www.gstatic.com challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
   `;
 

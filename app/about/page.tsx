@@ -1,7 +1,6 @@
 import Message from '@/app/_component/about/message';
 import Favicon from '@/app/_component/fragment/favicon';
 import { Metadata } from 'next';
-import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { headers } from 'next/headers';
 import styles from './page.module.scss';
 
@@ -28,9 +27,7 @@ export default async function AboutPage() {
           <a href="https://github.com/crizin/cozo-web">Web Client</a>
         </p>
       </div>
-      <ReCaptchaProvider reCaptchaKey={process.env.RECAPTCHA_SITE_KEY} nonce={nonce}>
-        <Message />
-      </ReCaptchaProvider>
+      <Message nonce={nonce} turnstileSiteKey={process.env.TURNSTILE_SITE_KEY ?? ''} />
     </div>
   );
 }

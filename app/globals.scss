@@ -114,10 +114,6 @@ textarea:focus, input:focus {
   }
 }
 
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
 @media (prefers-color-scheme: dark) {
   body {
     color: var.$text-color-dark;

@@ -2,20 +2,24 @@
 
 import { faCircleNotch, faComment } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useReCaptcha } from 'next-recaptcha-v3';
+import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './message.module.scss';
 
-export default function Message() {
+export default function Message({ nonce, turnstileSiteKey }: { nonce: string; turnstileSiteKey: string }) {
   const form = useForm();
-  const { executeRecaptcha } = useReCaptcha();
+  const [token, setToken] = useState<string>();
   const [sending, setSending] = useState(false);
+  const turnstile = React.useRef<TurnstileInstance>();
 
   const onSubmit = async (data: any) => {
-    setSending(true);
+    if (!token) {
+      alert('로봇 확인을 완료해주세요');
+      return;
+    }
 
-    const token = await executeRecaptcha('message');
+    setSending(true);
 
     fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/send-message`, {
       method: 'POST',
@@ -23,7 +27,6 @@ export default function Message() {
       body: `token=${encodeURIComponent(token)}&message=${encodeURIComponent(data.message)}`,
     })
       .then(async (response) => {
-        setSending(false);
         const json = await response.json();
         if (json.error === false) {
           alert('메시지가 전송되었습니다.');
@@ -32,9 +35,13 @@ export default function Message() {
         }
       })
       .catch((e) => {
-        setSending(false);
         alert('메시지 전송을 못했어요. 조금만 있다가 다시 해주세요.');
         console.error(e);
+      })
+      .finally(() => {
+        setSending(false);
+        setToken(undefined);
+        turnstile.current?.reset();
       });
   };
 
@@ -50,11 +57,8 @@ export default function Message() {
 
       <form onSubmit={form.handleSubmit(onSubmit)} className={styles.form}>
         <textarea rows={5} placeholder="내용을 입력해주세요" {...form.register('message', { required: true })}></textarea>
-        <div className={styles['recaptcha-branding']}>
-          이 사이트는 reCAPTCHA로 보호되며 Google <a href="https://policies.google.com/privacy">개인정보처리방침</a> 및{' '}
-          <a href="https://policies.google.com/terms">서비스 약관</a>이 적용됩니다.
-        </div>
-        <button type="submit" className="button" disabled={sending}>
+        <Turnstile siteKey={turnstileSiteKey} className={styles.turnstile} ref={turnstile} onSuccess={setToken} nonce={nonce} />
+        <button type="submit" className={`button ${styles.button}`} disabled={sending || !token}>
           {sending ? (
             <span>
               <FontAwesomeIcon icon={faCircleNotch} spin={true} /> 전송 중...
