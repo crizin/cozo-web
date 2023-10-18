@@ -21,7 +21,6 @@ yarn dev
 
 ## production에서 실행시 필요한 환경 변수
 
-- `HOSTNAME`: 0.0.0.0 (Public 접근이 필요하다면 설정)
 - `NEXT_PUBLIC_API_ENDPOINT`: API 서버 URL (클라이언트 호출용)
 - `API_ENDPOINT`: API 서버 URL (내부 호출용)
 - `GA_TRACKING_ID`: [Google Analytics](https://marketingplatform.google.com/about/analytics/) Tracking ID
