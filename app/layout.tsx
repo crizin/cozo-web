@@ -5,7 +5,7 @@ import Option from '@/app/_component/option';
 import { getBoards } from '@/app/_lib/client';
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { Noto_Color_Emoji, Noto_Sans_KR } from 'next/font/google';
 import { cookies, headers } from 'next/headers';
 import Script from 'next/script';
@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     siteName: 'cozo',
     description: '유명 커뮤니티들의 인기 게시글을 한 곳에서',
   },
+};
+
+export const viewport: Viewport = {
   themeColor: [
     {
       media: '(prefers-color-scheme: light)',
