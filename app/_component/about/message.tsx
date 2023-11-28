@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './message.module.scss';
 
-export default function Message({ nonce, turnstileSiteKey }: { nonce: string; turnstileSiteKey: string }) {
+export default function Message({ nonce, turnstileSiteKey }: Readonly<{ nonce: string; turnstileSiteKey: string }>) {
   const form = useForm();
   const [token, setToken] = useState<string>();
   const [sending, setSending] = useState(false);

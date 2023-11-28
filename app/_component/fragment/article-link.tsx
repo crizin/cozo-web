@@ -5,11 +5,11 @@ import React from 'react';
 import styles from './article-link.module.scss';
 
 interface Props {
-  article: Article;
-  mobile: boolean;
-  target: string;
-  logoSize?: number;
-  className?: string;
+  readonly article: Article;
+  readonly mobile: boolean;
+  readonly target: string;
+  readonly logoSize?: number;
+  readonly className?: string;
 }
 
 export default function ArticleLink({ article, mobile, target, logoSize, className }: Props) {

@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 export default async function SearchBoardPage({
   params,
   searchParams,
-}: {
+}: Readonly<{
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
-}) {
+}>) {
   const board = await getBoard(parseInt(params.id));
   const response = await getSearchResultsByBoard(board.id, searchParams.keyword as string, Utils.parseNumber(searchParams.page, 1));
   const result = response.result.item;

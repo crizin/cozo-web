@@ -8,10 +8,10 @@ import React, { useContext } from 'react';
 import styles from './article-list.module.scss';
 
 interface Props {
-  articles: Article[];
-  titles: Record<string, string>;
-  contents: Record<string, string>;
-  logoSize?: number;
+  readonly articles: Article[];
+  readonly titles: Record<string, string>;
+  readonly contents: Record<string, string>;
+  readonly logoSize?: number;
 }
 
 export default function SearchArticleList({ articles, titles, contents, logoSize }: Props) {

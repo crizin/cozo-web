@@ -9,8 +9,8 @@ import { useContext } from 'react';
 import styles from './article-list.module.scss';
 
 interface Props {
-  board?: Board;
-  articles: Page<Article[], number>;
+  readonly board?: Board;
+  readonly articles: Page<Article[], number>;
 }
 
 export default function ArticleList({ board, articles }: Props) {

@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './header.module.scss';
 
-export default function Header({ boards }: { boards: Board[] }) {
+export default function Header({ boards }: Readonly<{ boards: Board[] }>) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();

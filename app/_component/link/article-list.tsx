@@ -6,7 +6,7 @@ import { Article } from '@/app/_lib/model';
 import { useContext } from 'react';
 import styles from './article-list.module.scss';
 
-export default function ArticleList({ articles }: { articles: Article[] }) {
+export default function ArticleList({ articles }: Readonly<{ articles: Article[] }>) {
   const { state } = useContext(GlobalVariableContext);
 
   return (

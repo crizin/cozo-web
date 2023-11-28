@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'cozo',
 };
 
-export default async function IndexPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+export default async function IndexPage({ searchParams }: Readonly<{ searchParams: { [key: string]: string | string[] | undefined } }>) {
   const articles = await getArticles(Utils.parseNumber(searchParams.o));
 
   return (

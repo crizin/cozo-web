@@ -3,9 +3,9 @@ import Image from 'next/image';
 import styles from './site-logo.module.scss';
 
 interface Props {
-  board: Board;
-  size: number;
-  className?: string;
+  readonly board: Board;
+  readonly size: number;
+  readonly className?: string;
 }
 
 export default function SiteLogo({ board, size, className }: Props) {

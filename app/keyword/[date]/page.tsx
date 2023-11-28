@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'cozo | 키워드',
 };
 
-export default async function KeywordPage({ params }: { params: { date: string } }) {
+export default async function KeywordPage({ params }: Readonly<{ params: { date: string } }>) {
   const keywords = await getKeywords(params.date);
 
   return (

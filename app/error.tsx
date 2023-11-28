@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'cozo | 오류',
 };
 
-export default function GlobalErrorPage({ error, reset }: { error: Error; reset: () => void }) {
+export default function GlobalErrorPage({ error, reset }: Readonly<{ error: Error; reset: () => void }>) {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error);

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useEffect } from 'react';
 import styles from './option.module.scss';
 
-export default function Option({ newWindow }: { newWindow: boolean }) {
+export default function Option({ newWindow }: Readonly<{ newWindow: boolean }>) {
   const { state, dispatch } = useContext(GlobalVariableContext);
 
   useEffect(() => {

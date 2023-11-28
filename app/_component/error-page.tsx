@@ -6,7 +6,12 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import styles from './error-page.module.scss';
 
-export default function ErrorPage({ title, icon, children, reset }: { title: string; icon: IconDefinition; children: React.ReactNode; reset?: () => void }) {
+export default function ErrorPage({
+  title,
+  icon,
+  children,
+  reset,
+}: Readonly<{ title: string; icon: IconDefinition; children: React.ReactNode; reset?: () => void }>) {
   const router = useRouter();
 
   return (

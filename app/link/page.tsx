@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'cozo | 링크',
 };
 
-export default async function LinkPage({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+export default async function LinkPage({ searchParams }: Readonly<{ searchParams: { [key: string]: string | string[] | undefined } }>) {
   const links = await getLinks(Utils.parseNumber(searchParams.page, 1));
 
   return (

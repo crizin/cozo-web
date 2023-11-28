@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import styles from './link-item.module.scss';
 
 interface Props {
-  link: Link;
+  readonly link: Link;
 }
 
 export default function LinkItem({ link }: Props) {

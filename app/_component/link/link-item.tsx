@@ -8,7 +8,7 @@ import Utils from '@/app/_lib/utils';
 import { useContext } from 'react';
 import styles from './link-item.module.scss';
 
-export default function LinkItem({ link }: { link: Link }) {
+export default function LinkItem({ link }: Readonly<{ link: Link }>) {
   const { state } = useContext(GlobalVariableContext);
 
   return (

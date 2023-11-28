@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useContext } from 'react';
 import styles from './keyword-list.module.scss';
 
-export default function KeywordList({ keywords }: { keywords: TagTrend[] }) {
+export default function KeywordList({ keywords }: Readonly<{ keywords: TagTrend[] }>) {
   const { state } = useContext(GlobalVariableContext);
 
   return (

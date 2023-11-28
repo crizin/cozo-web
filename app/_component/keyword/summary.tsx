@@ -9,7 +9,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './summary.module.scss';
 
-export default function Summary({ dateString, keywords }: { dateString: string; keywords: Page<TagTrend[], string> }) {
+export default function Summary({ dateString, keywords }: Readonly<{ dateString: string; keywords: Page<TagTrend[], string> }>) {
   moment.locale('ko');
   const date = moment(dateString);
 

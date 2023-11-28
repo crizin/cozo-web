@@ -44,7 +44,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const boards = await getBoards();
   const cookieStore = cookies();
   const nonce = headers().get('X-Nonce') as string;
