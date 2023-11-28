@@ -150,6 +150,8 @@ textarea:focus, input:focus {
   }
 
   @media (width >= 820px) {
-    background-color: var.$background-color-dark;
+    body {
+      background-color: var.$background-color-dark;
+    }
   }
 }
