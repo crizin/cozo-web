@@ -8,7 +8,7 @@ body {
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
-  background-color: var.$background-color;
+  background-color: var.$content-background-color;
 }
 
 ul, ol {
@@ -114,10 +114,16 @@ textarea:focus, input:focus {
   }
 }
 
+@media (width >= 820px) {
+  body {
+    background-color: var.$background-color;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     color: var.$text-color-dark;
-    background-color: var.$background-color-dark;
+    background-color: var.$content-background-color-dark;
   }
 
   textarea {
@@ -141,5 +147,9 @@ textarea:focus, input:focus {
   .paging a {
     background-color: var.$navbar-background-color-dark;
     color: var.$navbar-text-color-dark;
+  }
+
+  @media (width >= 820px) {
+    background-color: var.$background-color-dark;
   }
 }
