@@ -1,5 +1,5 @@
-import Message from '@/app/_component/about/message';
-import Favicon from '@/app/_component/fragment/favicon';
+import Message from '@/component/about/message';
+import Favicon from '@/component/fragment/favicon';
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import styles from './page.module.scss';

@@ -1,6 +1,6 @@
-import LinkList from '@/app/_component/link/link-list';
-import { getLinks } from '@/app/_lib/client';
-import Utils from '@/app/_lib/utils';
+import LinkList from '@/component/link/link-list';
+import { getLinks } from '@/lib/client';
+import Utils from '@/lib/utils';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';

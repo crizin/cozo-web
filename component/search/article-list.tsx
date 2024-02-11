@@ -1,9 +1,9 @@
 'use client';
 
-import SiteLogo from '@/app/_component/fragment/site-logo';
-import { GlobalVariableContext } from '@/app/_component/global-variable-context';
-import { Article } from '@/app/_lib/model';
-import Utils from '@/app/_lib/utils';
+import SiteLogo from '@/component/fragment/site-logo';
+import { GlobalVariableContext } from '@/component/global-variable-context';
+import { Article } from '@/lib/model';
+import Utils from '@/lib/utils';
 import React, { useContext } from 'react';
 import styles from './article-list.module.scss';
 

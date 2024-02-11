@@ -1,7 +1,7 @@
-import SiteLogo from '@/app/_component/fragment/site-logo';
-import SearchArticleList from '@/app/_component/search/article-list';
-import { getBoard, getSearchResultsByBoard } from '@/app/_lib/client';
-import Utils from '@/app/_lib/utils';
+import SiteLogo from '@/component/fragment/site-logo';
+import SearchArticleList from '@/component/search/article-list';
+import { getBoard, getSearchResultsByBoard } from '@/lib/client';
+import Utils from '@/lib/utils';
 import { faChevronLeft, faChevronRight, faReply, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';

@@ -1,7 +1,7 @@
 'use client';
 
-import SiteLogo from '@/app/_component/fragment/site-logo';
-import { Board } from '@/app/_lib/model';
+import SiteLogo from '@/component/fragment/site-logo';
+import { Board } from '@/lib/model';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';

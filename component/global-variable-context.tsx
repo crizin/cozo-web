@@ -1,6 +1,6 @@
 'use client';
 
-import Utils from '@/app/_lib/utils';
+import Utils from '@/lib/utils';
 import React, { createContext, Dispatch, useEffect, useMemo, useReducer } from 'react';
 
 interface StateType {

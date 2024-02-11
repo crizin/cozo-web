@@ -1,10 +1,10 @@
 'use client';
 
-import ExternalImage from '@/app/_component/fragment/external-image';
-import Favicon from '@/app/_component/fragment/favicon';
-import { GlobalVariableContext } from '@/app/_component/global-variable-context';
-import { Link } from '@/app/_lib/model';
-import Utils from '@/app/_lib/utils';
+import ExternalImage from '@/component/fragment/external-image';
+import Favicon from '@/component/fragment/favicon';
+import { GlobalVariableContext } from '@/component/global-variable-context';
+import { Link } from '@/lib/model';
+import Utils from '@/lib/utils';
 import { useContext } from 'react';
 import styles from './link-item.module.scss';
 

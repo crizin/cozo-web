@@ -1,6 +1,6 @@
 'use client';
 
-import ErrorPage from '@/app/_component/error-page';
+import ErrorPage from '@/component/error-page';
 import { faBan, faBug } from '@fortawesome/free-solid-svg-icons';
 import { Metadata } from 'next';
 import { useEffect } from 'react';

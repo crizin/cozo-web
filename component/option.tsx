@@ -1,6 +1,6 @@
 'use client';
 
-import { GlobalVariableContext } from '@/app/_component/global-variable-context';
+import { GlobalVariableContext } from '@/component/global-variable-context';
 import { faToggleOff, faToggleOn } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useEffect } from 'react';

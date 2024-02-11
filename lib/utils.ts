@@ -1,4 +1,4 @@
-import { BadRequestError } from '@/app/_lib/client';
+import { BadRequestError } from '@/lib/client';
 import moment from 'moment';
 
 const Utils = {

@@ -1,4 +1,4 @@
-import { Board } from '@/app/_lib/model';
+import { Board } from '@/lib/model';
 import Image from 'next/image';
 import styles from './site-logo.module.scss';
 

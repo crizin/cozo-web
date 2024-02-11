@@ -1,10 +1,10 @@
 'use client';
 
-import LinkItem from '@/app/_component/article/link-item';
-import ArticleLink from '@/app/_component/fragment/article-link';
-import SiteLogo from '@/app/_component/fragment/site-logo';
-import { GlobalVariableContext } from '@/app/_component/global-variable-context';
-import { Article, Board, Page } from '@/app/_lib/model';
+import LinkItem from '@/component/article/link-item';
+import ArticleLink from '@/component/fragment/article-link';
+import SiteLogo from '@/component/fragment/site-logo';
+import { GlobalVariableContext } from '@/component/global-variable-context';
+import { Article, Board, Page } from '@/lib/model';
 import { useContext } from 'react';
 import styles from './article-list.module.scss';
 

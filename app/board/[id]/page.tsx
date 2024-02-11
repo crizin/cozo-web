@@ -1,7 +1,7 @@
-import ArticleList from '@/app/_component/article/article-list';
-import Paging from '@/app/_component/article/paging';
-import { getBoard, getBoardArticles, getBoards } from '@/app/_lib/client';
-import Utils from '@/app/_lib/utils';
+import ArticleList from '@/component/article/article-list';
+import Paging from '@/component/article/paging';
+import { getBoard, getBoardArticles, getBoards } from '@/lib/client';
+import Utils from '@/lib/utils';
 import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: Readonly<{ params: { id: string } }>): Promise<Metadata> {

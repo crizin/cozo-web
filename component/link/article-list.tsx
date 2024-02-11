@@ -1,8 +1,8 @@
 'use client';
 
-import ArticleLink from '@/app/_component/fragment/article-link';
-import { GlobalVariableContext } from '@/app/_component/global-variable-context';
-import { Article } from '@/app/_lib/model';
+import ArticleLink from '@/component/fragment/article-link';
+import { GlobalVariableContext } from '@/component/global-variable-context';
+import { Article } from '@/lib/model';
 import { useContext } from 'react';
 import styles from './article-list.module.scss';
 

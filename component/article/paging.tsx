@@ -1,4 +1,4 @@
-import { Article, Board, Page } from '@/app/_lib/model';
+import { Article, Board, Page } from '@/lib/model';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';

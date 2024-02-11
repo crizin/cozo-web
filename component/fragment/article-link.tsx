@@ -1,6 +1,6 @@
-import SiteLogo from '@/app/_component/fragment/site-logo';
-import { Article } from '@/app/_lib/model';
-import Utils from '@/app/_lib/utils';
+import SiteLogo from '@/component/fragment/site-logo';
+import { Article } from '@/lib/model';
+import Utils from '@/lib/utils';
 import React from 'react';
 import styles from './article-link.module.scss';
 

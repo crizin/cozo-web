@@ -1,4 +1,4 @@
-import { Article, Board, Link, Page, Response, SearchResult, TagTrend } from '@/app/_lib/model';
+import { Article, Board, Link, Page, Response, SearchResult, TagTrend } from '@/lib/model';
 
 export async function getBoards(): Promise<Response<Board[]>> {
   return fetch(`${process.env.API_ENDPOINT}/boards`, { next: { revalidate: 3600 } }).then((response) => validateResponse(response));

@@ -1,7 +1,7 @@
-import ArticleList from '@/app/_component/article/article-list';
-import Paging from '@/app/_component/article/paging';
-import { getArticles } from '@/app/_lib/client';
-import Utils from '@/app/_lib/utils';
+import ArticleList from '@/component/article/article-list';
+import Paging from '@/component/article/paging';
+import { getArticles } from '@/lib/client';
+import Utils from '@/lib/utils';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

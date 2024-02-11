@@ -1,6 +1,6 @@
 'use client';
 
-import { Page, TagTrend } from '@/app/_lib/model';
+import { Page, TagTrend } from '@/lib/model';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';

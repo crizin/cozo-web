@@ -1,4 +1,4 @@
-import ErrorPage from '@/app/_component/error-page';
+import ErrorPage from '@/component/error-page';
 import { faBan } from '@fortawesome/free-solid-svg-icons';
 import { Metadata } from 'next';
 

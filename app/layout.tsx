@@ -1,8 +1,8 @@
-import Footer from '@/app/_component/footer';
-import GlobalVariableContextProvider from '@/app/_component/global-variable-context';
-import Header from '@/app/_component/header';
-import Option from '@/app/_component/option';
-import { getBoards } from '@/app/_lib/client';
+import Footer from '@/component/footer';
+import GlobalVariableContextProvider from '@/component/global-variable-context';
+import Header from '@/component/header';
+import Option from '@/component/option';
+import { getBoards } from '@/lib/client';
 import { config as faConfig } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Metadata, Viewport } from 'next';
@@ -10,7 +10,7 @@ import { Noto_Sans_KR } from 'next/font/google';
 import { cookies, headers } from 'next/headers';
 import Script from 'next/script';
 import 'normalize.css';
-import { ReactNode } from 'react';
+import React from 'react';
 import './globals.scss';
 import styles from './layout.module.scss';
 
@@ -45,7 +45,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const boards = await getBoards();
   const cookieStore = cookies();
   const nonce = headers().get('X-Nonce') as string;
