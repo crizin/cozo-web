@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@marsidev/react-turnstile": "^0.4.1",
+    "@marsidev/react-turnstile": "^0.5.1",
     "framer-motion": "^11.0.3",
     "moment": "^2.30.1",
     "next": "14.1.0",
@@ -20,16 +20,16 @@
     "prom-client": "^15.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.49.3",
+    "react-hook-form": "^7.50.1",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "@types/node": "^20.11.6",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.11.17",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "sass": "^1.70.0",
     "typescript": "^5.3.3"
   }
