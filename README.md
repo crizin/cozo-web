@@ -1,7 +1,7 @@
 # cozo-web
 
 [![Website Up](https://img.shields.io/website.svg?url=https%3A%2F%2Fcozo.me)](https://cozo.me/)
-[![Observatory](https://img.shields.io/mozilla-observatory/grade/cozo.me)](https://observatory.mozilla.org/analyze/cozo.me)
+[![Mozilla HTTP Observatory Grade](https://img.shields.io/mozilla-observatory/grade/cozo.me)](https://developer.mozilla.org/en-US/observatory/analyze?host=cozo.me)
 [![Build](https://github.com/crizin/cozo-web/actions/workflows/build.yml/badge.svg)](https://github.com/crizin/cozo-web/actions)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d4f2e52ae5c246f8aa60d3edb25ded52)](https://app.codacy.com/gh/crizin/cozo-web/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=crizin_cozo-web&metric=alert_status)](https://sonarcloud.io/summary/overall?id=crizin_cozo-web)
