@@ -27,6 +27,7 @@ const Utils = {
     try {
       decoratedUrl = decodeURIComponent(url);
     } catch (e) {
+      console.debug('Failed to decode url', e);
       decoratedUrl = url;
     }
 
@@ -34,7 +35,7 @@ const Utils = {
   },
   isMobileView: () => {
     return typeof window === 'undefined' || window.innerWidth < 800;
-  },
+  }
 };
 
 export default Utils;
