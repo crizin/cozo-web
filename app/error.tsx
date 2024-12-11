@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import { useEffect } from 'react';
 
 export const metadata: Metadata = {
-  title: 'cozo | 오류',
+  title: 'cozo | 오류'
 };
 
 export default function GlobalErrorPage({ error, reset }: Readonly<{ error: Error; reset: () => void }>) {

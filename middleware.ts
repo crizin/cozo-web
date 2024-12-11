@@ -6,10 +6,10 @@ export const config = {
       source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'purpose', value: 'prefetch' },
-      ],
-    },
-  ],
+        { type: 'header', key: 'purpose', value: 'prefetch' }
+      ]
+    }
+  ]
 };
 
 export function middleware(request: NextRequest) {
@@ -18,8 +18,8 @@ export function middleware(request: NextRequest) {
   return NextResponse.next({
     headers: securityHeaders,
     request: {
-      headers: securityHeaders,
-    },
+      headers: securityHeaders
+    }
   });
 }
 

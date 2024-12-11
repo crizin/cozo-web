@@ -4,7 +4,7 @@ import { getKeywordLastDate, getKeywords } from '@/lib/client';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'cozo | 키워드',
+  title: 'cozo | 키워드'
 };
 
 export default async function KeywordPage() {

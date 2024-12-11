@@ -9,12 +9,13 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
-  title: 'cozo | 검색',
+  title: 'cozo | 검색'
 };
 
-export default async function SearchPage({ searchParams }: Readonly<{ searchParams: { [key: string]: string | string[] | undefined } }>) {
+export default async function SearchPage({ searchParams }: Readonly<{ searchParams: Promise<{ [key: string]: string | string[] | undefined }> }>) {
+  const { keyword, page } = await searchParams;
   const boards = await getBoardMap();
-  const response = await getSearchResults((searchParams.keyword as string) || '', Utils.parseNumber(searchParams.page, 1));
+  const response = await getSearchResults((keyword as string) || '', Utils.parseNumber(page, 1));
   const result = response.result.item;
 
   return (

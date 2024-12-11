@@ -45,13 +45,13 @@ export async function getKeywords(date: string): Promise<Response<Page<TagTrend[
 
 export async function getSearchResults(keyword: string, page = 1): Promise<Response<Page<SearchResult, number>>> {
   return fetch(`${process.env.API_ENDPOINT}/search?keyword=${encodeURIComponent(keyword)}&page=${page}`, { cache: 'no-store' }).then((response) =>
-    validateResponse(response),
+    validateResponse(response)
   );
 }
 
 export async function getSearchResultsByBoard(boardId: number, keyword: string, page = 1): Promise<Response<Page<SearchResult, number>>> {
   return fetch(`${process.env.API_ENDPOINT}/search/board/${boardId}?keyword=${encodeURIComponent(keyword)}&page=${page}`, { cache: 'no-store' }).then(
-    (response) => validateResponse(response),
+    (response) => validateResponse(response)
   );
 }
 

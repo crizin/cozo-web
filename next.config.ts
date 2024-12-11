@@ -1,22 +1,23 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   output: 'standalone',
   images: {
     remotePatterns: [
       {
-        hostname: '**',
-      },
-    ],
+        hostname: '**'
+      }
+    ]
   },
   redirects: async () => {
     return [
       {
         source: '/board',
         destination: '/',
-        permanent: true,
-      },
+        permanent: true
+      }
     ];
-  },
+  }
 };
 
 export default nextConfig;

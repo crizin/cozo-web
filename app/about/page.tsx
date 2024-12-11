@@ -5,11 +5,11 @@ import { headers } from 'next/headers';
 import styles from './page.module.scss';
 
 export const metadata: Metadata = {
-  title: 'cozo | 소개',
+  title: 'cozo | 소개'
 };
 
 export default async function AboutPage() {
-  const nonce = headers().get('nonce') as string;
+  const nonce = (await headers()).get('nonce') as string;
 
   return (
     <div className={styles.about}>

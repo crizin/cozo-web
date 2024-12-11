@@ -59,6 +59,6 @@ function highlight(string: string, defaultValue = '') {
       .replaceAll(/&/g, '&amp;')
       .replaceAll(/</g, '&lt;')
       .replaceAll(/>/g, '&gt;')
-      .replaceAll(/@@HL@@(.*?)@@\/HL@@/g, '<strong>$1</strong>'),
+      .replaceAll(/@@HL@@(.*?)@@\/HL@@/g, '<strong>$1</strong>')
   };
 }

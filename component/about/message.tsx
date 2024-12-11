@@ -11,7 +11,7 @@ export default function Message({ nonce, turnstileSiteKey }: Readonly<{ nonce: s
   const form = useForm();
   const [token, setToken] = useState<string>();
   const [sending, setSending] = useState(false);
-  const turnstile = React.useRef<TurnstileInstance>();
+  const turnstile = React.useRef<TurnstileInstance>(null);
 
   const onSubmit = async (data: any) => {
     if (!token) {
@@ -24,7 +24,7 @@ export default function Message({ nonce, turnstileSiteKey }: Readonly<{ nonce: s
     fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/send-message`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `token=${encodeURIComponent(token)}&message=${encodeURIComponent(data.message)}`,
+      body: `token=${encodeURIComponent(token)}&message=${encodeURIComponent(data.message)}`
     })
       .then(async (response) => {
         const json = await response.json();

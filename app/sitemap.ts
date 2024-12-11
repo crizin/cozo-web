@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return ['', 'about', 'board', 'keyword', 'link'].map((page) => {
     return {
       url: `https://cozo.me/${page}`,
-      lastModified: new Date(),
+      lastModified: new Date()
     };
   });
 }

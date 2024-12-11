@@ -10,7 +10,7 @@ interface StateType {
 
 const initialState: StateType = {
   useMobileUrl: false,
-  useNewWindow: false,
+  useNewWindow: false
 };
 
 const reducer = (state: StateType, action: string) => {

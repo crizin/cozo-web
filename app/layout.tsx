@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'cozo',
     siteName: 'cozo',
-    description: '유명 커뮤니티들의 인기 게시글을 한 곳에서',
-  },
+    description: '유명 커뮤니티들의 인기 게시글을 한 곳에서'
+  }
 };
 
 export const viewport: Viewport = {
@@ -36,19 +36,19 @@ export const viewport: Viewport = {
   themeColor: [
     {
       media: '(prefers-color-scheme: light)',
-      color: '#d3541e',
+      color: '#d3541e'
     },
     {
       media: '(prefers-color-scheme: dark)',
-      color: '#a23b10',
-    },
-  ],
+      color: '#a23b10'
+    }
+  ]
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const boards = await getBoards();
-  const cookieStore = cookies();
-  const nonce = headers().get('X-Nonce') as string;
+  const cookieStore = await cookies();
+  const nonce = (await headers()).get('X-Nonce') as string;
   const useNewWindow = cookieStore.get('open_new_window')?.value === '1';
 
   return (

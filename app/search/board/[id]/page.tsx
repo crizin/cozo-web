@@ -8,22 +8,22 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const board = await getBoard(parseInt(params.id));
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const board = await getBoard(parseInt(id));
   return {
-    title: `cozo | 검색 | ${board.name} » ${board.site.name}`,
+    title: `cozo | 검색 | ${board.name} » ${board.site.name}`
   };
 }
 
-export default async function SearchBoardPage({
-  params,
-  searchParams,
-}: Readonly<{
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+export default async function SearchBoardPage({ params, searchParams }: Readonly<{
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }>) {
-  const board = await getBoard(parseInt(params.id));
-  const response = await getSearchResultsByBoard(board.id, searchParams.keyword as string, Utils.parseNumber(searchParams.page, 1));
+  const { id } = await params;
+  const { keyword, page } = await searchParams;
+  const board = await getBoard(parseInt(id));
+  const response = await getSearchResultsByBoard(board.id, keyword as string, Utils.parseNumber(page, 1));
   const result = response.result.item;
 
   return (

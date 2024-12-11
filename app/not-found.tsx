@@ -3,7 +3,7 @@ import { faBan } from '@fortawesome/free-solid-svg-icons';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'cozo | 존재하지 않는 페이지',
+  title: 'cozo | 존재하지 않는 페이지'
 };
 
 export default function NotFoundPage() {
