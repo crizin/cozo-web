@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function SearchBoardPage({ params, searchParams }: Readonly<{
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: Promise<{ [_: string]: string | string[] | undefined }>;
 }>) {
   const { id } = await params;
   const { keyword, page } = await searchParams;

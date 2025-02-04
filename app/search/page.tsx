@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'cozo | 검색'
 };
 
-export default async function SearchPage({ searchParams }: Readonly<{ searchParams: Promise<{ [key: string]: string | string[] | undefined }> }>) {
+export default async function SearchPage({ searchParams }: Readonly<{ searchParams: Promise<{ [_: string]: string | string[] | undefined }> }>) {
   const { keyword, page } = await searchParams;
   const boards = await getBoardMap();
   const response = await getSearchResults((keyword as string) || '', Utils.parseNumber(page, 1));
