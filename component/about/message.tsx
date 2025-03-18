@@ -7,13 +7,17 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './message.module.scss';
 
+interface MessageFormData {
+  message: string;
+}
+
 export default function Message({ nonce, turnstileSiteKey }: Readonly<{ nonce: string; turnstileSiteKey: string }>) {
-  const form = useForm();
+  const form = useForm<MessageFormData>();
   const [token, setToken] = useState<string>();
   const [sending, setSending] = useState(false);
   const turnstile = React.useRef<TurnstileInstance>(null);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: MessageFormData) => {
     if (!token) {
       alert('로봇 확인을 완료해주세요');
       return;

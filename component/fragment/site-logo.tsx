@@ -11,7 +11,7 @@ interface Props {
 export default function SiteLogo({ board, size, className }: Props) {
   return (
     <Image
-      src={require(`@/public/icon/${board.site.key.toLowerCase()}.svg`)}
+      src={`/icon/${board.site.key.toLowerCase()}.svg`}
       className={`${styles.logo} ${className}`}
       width={size}
       height={size}
