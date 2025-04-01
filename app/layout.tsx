@@ -73,7 +73,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <GlobalVariableContextProvider useNewWindow={useNewWindow}>
           <div className={styles.container}>
             <div className={styles.header}>
-              <Header boards={boards.result} />
+              <Header boards={boards.result.filter(b => b.active)} />
             </div>
             <main className={styles.content}>{children}</main>
             <div className={styles.footer}>

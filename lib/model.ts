@@ -23,6 +23,7 @@ export interface Board {
   readonly name: string;
   readonly mainUrlPc: string;
   readonly mainUrlMobile: string;
+  readonly active: boolean;
 }
 
 export interface Article {
