@@ -29,7 +29,7 @@ yarn dev
 
 - [.github/workflows/build.yml](.github/workflows/build.yml): 프로젝트 빌드 후 GitHub Container Registry에 Docker 이미지를 푸시
     - 필요한 Secrets
-        - `SLACK_WEBHOOK_URL`: https://hooks.slack.com/services/ABCDEFGHI/JKLMNOPQRST/abcdefghijklmnOPQRSTU012
+        - `DISCORD_WEBHOOK`: https://discord.com/api/webhooks/0000000000000000000/oooooooooooooo_ooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 ## 참고
 
