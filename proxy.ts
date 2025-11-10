@@ -12,7 +12,7 @@ export const config = {
   ]
 };
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const securityHeaders = getSecurityHeaders(request.headers);
 
   return NextResponse.next({
